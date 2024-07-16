@@ -36,6 +36,8 @@ func NewBatchStrategy(serializer Serializer, batchWait time.Duration, maxConcurr
 	if maxConcurrent < 0 {
 		maxConcurrent = 0
 	}
+	log.Printf("I! NewBatchStrategy buffer maxBatchSize: %s, maxContentSize: %s",
+		maxBatchSize, maxContentSize)
 	return &batchStrategy{
 		buffer:           NewMessageBuffer(maxBatchSize, maxContentSize),
 		serializer:       serializer,
