@@ -1,3 +1,3 @@
 package config
 
-var Version = "v0.0.1-202407231700"
+var Version = "v_0.0.1-202407231700"
