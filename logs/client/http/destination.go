@@ -249,7 +249,7 @@ func buildURL(endpoint logsconfig.Endpoint) string {
 		Host:   address,
 	}
 	if endpoint.Version == logsconfig.EPIntakeVersion2 && endpoint.TrackType != "" {
-		url.Path = fmt.Sprintf("/api/v2/%s", endpoint.TrackType)
+		url.Path = fmt.Sprintf("/apm/api/v2/%s", endpoint.TrackType)
 	} else {
 		url.Path = "/v1/input"
 	}
