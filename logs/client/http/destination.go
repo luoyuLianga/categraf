@@ -140,7 +140,7 @@ func (d *Destination) unconditionalSend(payload []byte) (err error) {
 		return err
 	}
 	req.Header.Set("User-Agent", "categraf")
-	req.Header.Set("API-KEY", coreconfig.Config.Global.ApiKey)
+	req.Header.Set("Api-Key", coreconfig.Config.Global.ApiKey)
 	req.Header.Set("Content-Type", d.contentType)
 	req.Header.Set("Content-Encoding", d.contentEncoding.name())
 	if d.protocol != "" {

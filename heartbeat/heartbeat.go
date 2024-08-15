@@ -156,7 +156,7 @@ func work(ps *system.SystemPS, client *http.Client) {
 	}
 
 	req.Header.Set("Content-Type", "application/json")
-	req.Header.Set("API-KEY", config.Config.Global.ApiKey)
+	req.Header.Set("Api-Key", config.Config.Global.ApiKey)
 	req.Header.Set("Content-Encoding", "gzip")
 	req.Header.Set("User-Agent", "categraf/"+hostIP)
 
