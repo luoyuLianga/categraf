@@ -86,6 +86,7 @@ func (w Writer) post(req []byte) error {
 
 	httpReq.Header.Add("Content-Encoding", "snappy")
 	httpReq.Header.Set("Content-Type", "application/x-protobuf")
+	httpReq.Header.Set("API-KEY", config.Config.Global.ApiKey)
 	httpReq.Header.Set("User-Agent", "categraf")
 	httpReq.Header.Set("X-Prometheus-Remote-Write-Version", "0.1.0")
 

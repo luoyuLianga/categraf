@@ -178,6 +178,8 @@ func (hrp *HTTPProvider) doReq() (*httpProviderResponse, error) {
 		}
 	}
 
+	req.Header.Add("API-KEY", config.Config.Global.ApiKey)
+
 	if hrp.AuthUsername != "" || hrp.AuthPassword != "" {
 		req.SetBasicAuth(hrp.AuthUsername, hrp.AuthPassword)
 	}
