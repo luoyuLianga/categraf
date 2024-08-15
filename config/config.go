@@ -28,6 +28,7 @@ var envVarEscaper = strings.NewReplacer(
 
 type Global struct {
 	PrintConfigs bool              `toml:"print_configs"`
+	ApiKey       string            `toml:"api_key"`
 	Hostname     string            `toml:"hostname"`
 	OmitHostname bool              `toml:"omit_hostname"`
 	Labels       map[string]string `toml:"labels"`
@@ -157,6 +158,11 @@ func InitConfig(configDir string, debugLevel int, debugMode, testMode bool, inte
 	if Config.WriterOpt.Batch <= 0 {
 		Config.WriterOpt.Batch = 1000
 	}
+
+	if Config.Global.ApiKey == "" {
+		Config.Global.ApiKey = "9ff8f176e65de49f"
+	}
+	log.Printf("E! config.global.apikey %s", Config.Global.ApiKey)
 
 	Config.Global.Hostname = strings.TrimSpace(Config.Global.Hostname)
 
